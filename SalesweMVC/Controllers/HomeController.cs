@@ -1,5 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using SalesweMVC.Models;
+using SalesweMVC.Models.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -17,8 +17,8 @@ namespace SalesweMVC.Controllers
 
         public IActionResult About()
         {
-            ViewData["Message"] = "Your application description page.";
-            ViewData["email"] = "eric19992016@gmail.com";
+            ViewData["Message"] = "Project Sales Web MVC";
+            ViewData["user"] = "Eric Leandro Silva";
 
             return View();
         }
@@ -38,7 +38,7 @@ namespace SalesweMVC.Controllers
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {
-            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+            return View(new SalesweMVC.Models.ViewModels.ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
     }
 }
